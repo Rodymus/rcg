@@ -4,86 +4,48 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter @Setter
 @Entity
 public class Experiencia {
-  
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-  
-  @NotNull
-  @Size(min = 1, max = 50, message = "no cumple con la longitud")
-  private String empresa;
- 
-  @NotNull
-  @Size(min = 1, max = 50, message = "no cumple con la longitud")
-  private String puesto;
- 
-  @NotNull
-  @Size(min = 1, max = 50, message = "no cumple con la longitud")
-  private String descripcion;
- 
-  @NotNull
-  @Size(min = 1, max = 50, message = "no cumple con la longitud")
-  private String fecha;
-  
-  @Size(min = 1, max = 50, message = "no cumple con la longitud")
-  private String img;
 
-    public Long getId() {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String nombreE;
+    private String descripcionE;
+
+    //Constructores
+    public Experiencia() {
+    }
+
+    public Experiencia(String nombreE, String descripcionE) {
+        this.nombreE = nombreE;
+        this.descripcionE = descripcionE;
+    }
+
+    //Getters and setters
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getEmpresa() {
-        return empresa;
+    public String getNombreE() {
+        return nombreE;
     }
 
-    public void setEmpresa(String empresa) {
-        this.empresa = empresa;
+    public void setNombreE(String nombreE) {
+        this.nombreE = nombreE;
     }
 
-    public String getPuesto() {
-        return puesto;
+    public String getDescripcionE() {
+        return descripcionE;
     }
 
-    public void setPuesto(String puesto) {
-        this.puesto = puesto;
+    public void setDescripcionE(String descripcionE) {
+        this.descripcionE = descripcionE;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
-  
-  
-  
 }
