@@ -38,14 +38,13 @@ public class JwtProvider {
     
     public String getNombreUsuarioFromToken(String token){
         return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody().getSubject();
-        
     }
     
     public boolean validateToken(String token){
         try{
             Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
             return true;
-        } catch (MalformedJwtException e){
+        }catch (MalformedJwtException e){
             logger.error("Token mal formado!");
         }catch (UnsupportedJwtException e){
             logger.error("Token no soportado!");
