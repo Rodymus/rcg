@@ -23,7 +23,7 @@ public class Experiencia {
         this.descripcionE = descripcionE;
     }
 
-    //Getters and setters
+    //G&S
     public int getId() {
         return id;
     }
