@@ -10,4 +10,5 @@ public class RcgApplication {
 		SpringApplication.run(RcgApplication.class, args);
 	}
 
+        
 }
